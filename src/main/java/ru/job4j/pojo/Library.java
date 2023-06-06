@@ -17,14 +17,16 @@ public class Library {
         for (int i = 0; i < books.length; i++) {
             System.out.println(i + ": " + books[i].getName() + " - " + books[i].getAuthor());
         }
-        System.out.println("\nSwap 0 and 3");
+        System.out.println();
+        System.out.println("Swap 0 and 3");
         swapBooks(books, 0, 3);
         for (int i = 0; i < books.length; i++) {
             System.out.println(i + ": " + books[i].getName() + " - " + books[i].getAuthor());
         }
-        System.out.println("\nSearch book: \"Clean Code\"");
+        System.out.println();
+        System.out.println("Search book: \"Clean Code\"");
         for (Book book : books) {
-            if (book.getName().equals("Clean Code")) {
+            if ("Clean Code".equals(book.getName())) {
                 System.out.println(book.getName() + " - " + book.getAuthor());
             }
         }
