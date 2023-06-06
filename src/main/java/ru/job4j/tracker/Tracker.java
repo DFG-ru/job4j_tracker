@@ -51,4 +51,13 @@ public class Tracker {
         items[index] = item;
         return true;
     }
+
+    public boolean delete(int id) {
+        if (id == -1 || id >= items.length) {
+            return false;
+        }
+        items[id] = null;
+        size--;
+        return true;
+    }
 }
