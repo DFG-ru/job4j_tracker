@@ -60,6 +60,7 @@ public class Tracker {
         }
         items[index] = null;
         size--;
+        System.arraycopy(items, 0, items, 0, items.length - 1);
         return true;
     }
 }
