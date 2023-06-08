@@ -22,10 +22,10 @@ public class StartUI {
                 Item[] items = tracker.findAll();
                 if (items.length == 0) {
                     System.out.println("Хранилище ещё не содержит заявок");
-                    continue;
-                }
-                for (Item item : items) {
-                    System.out.println(item);
+                } else {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit item ===");
