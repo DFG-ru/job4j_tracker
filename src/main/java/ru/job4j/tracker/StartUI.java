@@ -32,7 +32,7 @@ public class StartUI {
         UserAction[] actions = {
                 new ExitAction(),
                 new CreateAction(output),
-                new ShowAllAction(output),
+                new FindAllAction(output),
                 new EditAction(output),
                 new DeleteAction(output),
                 new FindByIdAction(output),
