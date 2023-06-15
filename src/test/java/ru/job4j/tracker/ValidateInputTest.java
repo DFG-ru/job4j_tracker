@@ -54,9 +54,18 @@ public class ValidateInputTest {
                 9,
                 0,
         };
-        for (int i = 0; i < selected.length; i++) {
-            selected[i] = input.askInt("Enter menu:");
-        }
+        selected[0] = input.askInt("Enter menu:");
+        selected[1] = input.askInt("Enter menu:");
+        selected[2] = input.askInt("Enter menu:");
+        selected[3] = input.askInt("Enter menu:");
+        selected[4] = input.askInt("Enter menu:");
+        selected[5] = input.askInt("Enter menu:");
+        selected[6] = input.askInt("Enter menu:");
+        selected[7] = input.askInt("Enter menu:");
+        selected[8] = input.askInt("Enter menu:");
+        selected[9] = input.askInt("Enter menu:");
+        selected[10] = input.askInt("Enter menu:");
+        selected[11] = input.askInt("Enter menu:");
         assertThat(selected).isEqualTo(expected);
     }
 
