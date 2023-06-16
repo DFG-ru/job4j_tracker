@@ -1,7 +1,6 @@
 package ru.job4j.early;
 
 public class PasswordValidator {
-    private static final String[] FORBIDDEN = {"qwerty", "12345", "password", "admin", "user"};
 
     /**
      * Метод проверят пароль по правилам:
@@ -31,20 +30,11 @@ public class PasswordValidator {
             throw new IllegalArgumentException("Password should be length [8, 32]");
         }
         String[] substrings = {"qwerty", "12345", "password", "admin", "user"};
-        char[] passCharArr = password.toLowerCase().toCharArray();
+        String passwordLowerCase = password.toLowerCase();
         for (String s : substrings) {
-            char[] substring = s.toCharArray();
-            int k = 0;
-            for (char passChar : passCharArr) {
-                if (substring[k] == passChar) {
-                    k++;
-                    if (k == substring.length) {
-                        throw new IllegalArgumentException("Password shouldn't contain substrings: "
-                                + "qwerty, 12345, password, admin, user");
-                    }
-                } else if (k > 0) {
-                    break;
-                }
+            if (passwordLowerCase.toLowerCase().contains(s)) {
+                throw new IllegalArgumentException("Password shouldn't contain substrings: "
+                        + "qwerty, 12345, password, admin, user");
             }
         }
         boolean hasUpCase = false;
@@ -54,19 +44,15 @@ public class PasswordValidator {
         for (char symbol : password.toCharArray()) {
             if (!hasSpecial && !Character.isLetterOrDigit(symbol)) {
                 hasSpecial = true;
-                continue;
             }
             if (!hasDigit && Character.isDigit(symbol)) {
                 hasDigit = true;
-                continue;
             }
             if (!hasUpCase && Character.isUpperCase(symbol)) {
                 hasUpCase = true;
-                continue;
             }
             if (!hasLowCase && Character.isLowerCase(symbol)) {
                 hasLowCase = true;
-                continue;
             }
             if (hasSpecial && hasLowCase && hasUpCase && hasDigit) {
                 break;
